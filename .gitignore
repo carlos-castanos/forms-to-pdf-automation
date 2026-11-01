@@ -1,3 +1,12 @@
+# Python cache and virtual environments
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+.coverage
+
 # Project data - never commit
 datos/
 pdfs/
@@ -9,5 +18,12 @@ output/
 *.xlsx
 *.xls
 
-# Logs
+# Local configuration and logs
+.env
 *.log
+
+# Editor and operating system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
