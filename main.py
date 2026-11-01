@@ -7,10 +7,17 @@
 # CONFIGURACIÓN DEL PROCESO
 # =========================
 
+import shutil
+from pathlib import Path
+
 MES = "SEPTIEMBRE"
 AÑO = 2026
 
 GRUPOS = [1, 2, 3, 4, 5]
+
+# Store processed PDFs separately to preserve the originals.
+CARPETA_SALIDA = Path("output")
+CARPETA_SALIDA.mkdir(parents=True, exist_ok=True)
 
 
 # =========================
@@ -152,6 +159,10 @@ for grupo in GRUPOS:
 
                     continue
 
+                # Create a working copy so the original PDF remains unchanged.
+                ruta_pdf_salida = CARPETA_SALIDA / Path(ruta_pdf).name
+                shutil.copy2(ruta_pdf, ruta_pdf_salida)
+
 
                 # 2. Preparar valores
 
@@ -173,14 +184,14 @@ for grupo in GRUPOS:
                 # 4. Escribir PDF
 
                 escribir_campos_pdf(
-                    ruta_pdf,
+                    ruta_pdf_salida,
                     valores_normalizados
                 )
 
-                total_horas = calcular_total_horas(ruta_pdf)
+                total_horas = calcular_total_horas(ruta_pdf_salida)
 
                 escribir_total_horas(
-                    ruta_pdf,
+                    ruta_pdf_salida,
                     total_horas
                 )
 
