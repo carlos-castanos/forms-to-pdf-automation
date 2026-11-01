@@ -123,6 +123,16 @@ Los PDF actualizados se guardan en `output/`. El código actual utiliza septiemb
 - Si los encabezados, identificadores o campos PDF no coinciden con los esperados, será necesario adaptar el código.
 - El programa está pensado para el formato específico de los formularios utilizados en el proyecto; no es un lector universal de cualquier PDF.
 
+## Pruebas automatizadas
+
+Hay pruebas unitarias para algunas reglas de integración y preparación de datos. Puedes ejecutarlas localmente con:
+
+```bash
+python -m unittest discover -s tests -v
+```
+
+También hay un flujo de GitHub Actions que ejecuta estas pruebas automáticamente al subir cambios o abrir una solicitud de integración. Las pruebas actuales verifican funciones individuales; todavía no reemplazan una ejecución completa con archivos Excel y PDF de ejemplo.
+
 ## Privacidad
 
 Por privacidad, este repositorio contiene únicamente código y documentación. No se incluyen las hojas de cálculo ni los formularios originales, ya que pueden contener datos personales. Para compartir o probar el proyecto, utiliza archivos ficticios o anonimizados.
