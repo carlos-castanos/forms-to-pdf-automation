@@ -1,3 +1,5 @@
+![Pruebas automáticas](https://github.com/carlos-castanos/forms-to-pdf-automation/actions/workflows/tests.yml/badge.svg)
+
 # Automatización de formularios y documentos PDF
 
 Este proyecto surgió de una tarea administrativa repetitiva: reunir respuestas de formularios, compararlas con una lista de referencia y actualizar varios documentos PDF. En lugar de hacer esos pasos manualmente, organicé el proceso en varios módulos de Python.
