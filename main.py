@@ -159,7 +159,7 @@ for grupo in GRUPOS:
 
                     continue
 
-                # Create a working copy so the original PDF remains unchanged.
+                # Crear una copia funcional  para que los PDFs originales se mantengan sin cambios.
                 ruta_pdf_salida = CARPETA_SALIDA / Path(ruta_pdf).name
                 shutil.copy2(ruta_pdf, ruta_pdf_salida)
 
